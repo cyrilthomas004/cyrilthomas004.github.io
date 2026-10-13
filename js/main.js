@@ -55,11 +55,11 @@ const projects = {
 
         videos: [
             {
-                src: "videos/animated-learning/ef-introduction.mp4",
+                src: "https://drive.google.com/file/d/1YjEWGgdA4wGtY4SnJoH67W3Pai4Fzns2/preview",
                 title: "EF Introduction"
             },
             {
-                src: "videos/animated-learning/ef-channels.mp4",
+                src: "https://drive.google.com/file/d/1YVZKU2yJshDP1fvb-7evfEvLzd03G3yv/preview",
                 title: "EF Channels"
             }
         ],
@@ -96,7 +96,7 @@ const projects = {
 
         videos: [
             {
-                src: "videos/training/training-video.mp4",
+                src: "https://drive.google.com/file/d/1Y-0codYSj9YDXuKF12bVBCOJCAR-yM75/preview",
                 title: "Training Video"
             }
         ],
@@ -188,27 +188,27 @@ const projects = {
 
         videos: [
             {
-                src: "videos/portfolio/asset-dashboard.mp4",
+                src: "https://drive.google.com/file/d/1KbbZFgJcuJSAodsRvY4aga3lKS7E_Vkr/preview",
                 title: "Asset Dashboard: Use Case-Based Video"
             },
             {
-                src: "videos/portfolio/video-01.mp4",
+                src: "https://drive.google.com/file/d/1aNSk1ztpb886b2AO5V6kGWALYuNu9jLa/preview",
                 title: "Video 1"
             },
             {
-                src: "videos/portfolio/smart-ai-agent-teams.mp4",
+                src: "https://drive.google.com/file/d/1P0GOIFQPfr2FJ-_fhOkXC9tI7RP_vE4M/preview",
                 title: "Your Smart AI Agent — Now Inside Microsoft Teams"
             },
             {
-                src: "videos/portfolio/video-02.mp4",
+                src: "https://drive.google.com/file/d/1TwU9oViGzcpP5oAtqgMMmCFdo4ptF5UR/preview",
                 title: "Video 2"
             },
             {
-                src: "videos/portfolio/seamless-integration.mp4",
+                src: "https://drive.google.com/file/d/1ggBJMhxFAYj_iWPqJSeK1hl41yhZSW9M/preview",
                 title: "Seamless Integration for Limitless Productivity"
             },
             {
-                src: "videos/portfolio/automate-onboarding-offboarding.mp4",
+                src: "https://drive.google.com/file/d/1R_ZA-jobUL2CRH36TESWZWJaGz-D4Z9D/preview",
                 title: "Automate Onboarding & Offboarding with Zero Delays"
             }
         ],
@@ -300,11 +300,6 @@ function loadProject(project) {
     panelVisual.className = "project-art panel-art " + project.visualClass;
     panelVisual.setAttribute("aria-label", project.title + " preview");
 
-    panelVideos.querySelectorAll("video").forEach(video => {
-        video.pause();
-        video.removeAttribute("src");
-        video.load();
-    });
     panelVideos.replaceChildren();
     panelVideos.hidden = !project.videos;
     if (project.videos) {
@@ -314,30 +309,30 @@ function loadProject(project) {
 
         project.videos.forEach(videoProject => {
             const figure = document.createElement("figure");
-            const video = document.createElement("video");
-            const errorMessage = document.createElement("p");
-            const downloadLink = document.createElement("a");
+            const loadButton = document.createElement("button");
+            const openLink = document.createElement("a");
             const caption = document.createElement("figcaption");
-            video.controls = true;
-            video.preload = "metadata";
-            video.playsInline = true;
-            video.src = videoProject.src;
-            video.setAttribute("aria-label", videoProject.title);
-            errorMessage.className = "project-video-error";
-            errorMessage.hidden = true;
-            errorMessage.textContent = "This video could not be played in this browser. ";
-            downloadLink.href = videoProject.src;
-            downloadLink.download = "";
-            downloadLink.textContent = "Download the video";
-            video.addEventListener("error", () => {
-                errorMessage.hidden = false;
-            });
+            loadButton.type = "button";
+            loadButton.className = "project-video-load";
+            loadButton.setAttribute("aria-label", "Load " + videoProject.title + " from Google Drive");
+            loadButton.textContent = "▶";
+            loadButton.addEventListener("click", () => {
+                const video = document.createElement("iframe");
+                video.src = videoProject.src;
+                video.title = videoProject.title;
+                video.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+                loadButton.replaceWith(video);
+            }, { once: true });
+            openLink.href = videoProject.src.replace(/\/preview$/, "/view");
+            openLink.target = "_blank";
+            openLink.rel = "noopener noreferrer";
+            openLink.className = "project-video-link";
+            openLink.textContent = "Open video in Google Drive";
             caption.textContent = videoProject.title;
 
-            figure.appendChild(video);
-            errorMessage.appendChild(downloadLink);
-            figure.appendChild(errorMessage);
+            figure.appendChild(loadButton);
             figure.appendChild(caption);
+            figure.appendChild(openLink);
             panelVideos.appendChild(figure);
         });
     }
