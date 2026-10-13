@@ -963,25 +963,41 @@ button:focus-visible {
     background: #080b0c;
 }
 
-.project-video-list video {
+.project-video-list iframe {
     display: block;
     width: 100%;
-    max-height: 300px;
+    height: min(56.25vw, 300px);
+    min-height: 180px;
+    border: 0;
     background: #000;
 }
 
-.project-video-error {
-    margin: 0;
+.project-video-load {
+    display: grid;
+    width: 100%;
+    height: min(56.25vw, 300px);
+    min-height: 180px;
+    place-items: center;
+    border: 0;
+    background: radial-gradient(ellipse at center, #26322d, #080b0c 72%);
+    color: var(--primary);
+    cursor: pointer;
+    font-size: 42px;
+}
+
+.project-video-load:hover,
+.project-video-load:focus-visible {
+    background: radial-gradient(ellipse at center, #35463d, #080b0c 72%);
+}
+
+.project-video-link {
+    display: inline-block;
     padding: 10px 12px;
     color: var(--muted);
     font-size: 12px;
 }
 
-.project-video-error[hidden] {
-    display: none;
-}
-
-.project-video-error a {
+.project-video-link:hover {
     color: var(--primary);
 }
 
