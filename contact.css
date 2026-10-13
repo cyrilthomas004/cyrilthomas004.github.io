@@ -1,0 +1,673 @@
+/*==================================================
+                CONTACT PAGE
+===================================================*/
+
+.contact-page{
+
+    min-height:100vh;
+
+    background:linear-gradient(
+        180deg,
+        #EEF4EF 0%,
+        #E8F0E9 25%,
+        #DDE8DF 40%,
+        #6F8A75 70%,
+        #536A59 100%
+    );
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+
+/*=========================================
+        Decorative Background Shapes
+=========================================*/
+
+.contact-page::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:700px;
+
+    height:700px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.18);
+
+    top:-260px;
+
+    right:-220px;
+
+    filter:blur(5px);
+
+}
+
+.contact-page::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:420px;
+
+    height:420px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.10);
+
+    left:-120px;
+
+    bottom:-140px;
+
+}
+
+
+/*=========================================
+                HERO
+=========================================*/
+
+.contact-hero{
+
+    max-width:900px;
+
+    margin:auto;
+
+    padding:120px 20px 80px;
+
+    text-align:center;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.contact-hero .story-label{
+
+    color:#6F8A75;
+
+    letter-spacing:5px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    margin-bottom:25px;
+
+}
+
+.contact-hero h1{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:76px;
+
+    line-height:1.05;
+
+    color:#2E3131;
+
+    margin-bottom:35px;
+
+}
+
+.hero-description{
+
+    max-width:720px;
+
+    margin:auto;
+
+    font-size:20px;
+
+    line-height:1.9;
+
+    color:#5B645E;
+
+}
+
+
+/*=========================================
+            SECTION DIVIDER
+=========================================*/
+
+.section-divider{
+
+    width:120px;
+
+    height:2px;
+
+    background:#AEC0B1;
+
+    margin:40px auto 80px;
+
+    border-radius:20px;
+
+}
+/*==================================================
+                CONTACT CARDS
+===================================================*/
+
+.contact-grid{
+
+    max-width:1200px;
+
+    margin:0 auto 120px;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:35px;
+
+    padding:0 40px;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.contact-card{
+
+    background:#FFFFFF;
+
+    border-radius:28px;
+
+    padding:55px 40px;
+
+    text-align:center;
+
+    transition:.45s ease;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.08);
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+/* Premium top accent */
+
+.contact-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    width:100%;
+
+    height:6px;
+
+    background:linear-gradient(
+        90deg,
+        #6F8A75,
+        #91A596
+    );
+
+}
+
+/* Featured middle card */
+
+.featured-card{
+
+    transform:translateY(-30px);
+
+}
+
+.contact-card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:0 30px 80px rgba(0,0,0,.15);
+
+}
+
+.featured-card:hover{
+
+    transform:translateY(-42px);
+
+}
+
+/* Icon */
+
+.card-icon{
+
+    width:90px;
+
+    height:90px;
+
+    margin:0 auto 35px;
+
+    border-radius:50%;
+
+    background:#EEF4EF;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:34px;
+
+    font-weight:600;
+
+    color:#6F8A75;
+
+    transition:.4s;
+
+}
+
+.contact-card:hover .card-icon{
+
+    transform:scale(1.08);
+
+    background:#6F8A75;
+
+    color:white;
+
+}
+
+/* Card title */
+
+.contact-card h3{
+
+    font-size:32px;
+
+    margin-bottom:20px;
+
+    color:#2E3131;
+
+}
+
+/* Card text */
+
+.contact-card p{
+
+    color:#727272;
+
+    line-height:1.9;
+
+    margin-bottom:35px;
+
+}
+
+/* Button */
+
+.contact-card a{
+
+    display:inline-block;
+
+    padding:15px 30px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    background:#6F8A75;
+
+    color:white;
+
+    font-weight:500;
+
+    transition:.35s;
+
+}
+
+.contact-card a:hover{
+
+    background:#4F6754;
+
+    transform:translateY(-3px);
+
+}
+
+/*==================================================
+                    QUOTE
+===================================================*/
+
+.quote-section{
+
+    background:#5F7765;
+
+    padding:120px 40px;
+
+    text-align:center;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.quote-mark{
+
+    position:absolute;
+
+    top:-80px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    font-size:240px;
+
+    font-family:"Cormorant Garamond",serif;
+
+    color:rgba(255,255,255,.08);
+
+    line-height:1;
+
+}
+
+.quote-section h2{
+
+    max-width:900px;
+
+    margin:auto;
+
+    font-size:54px;
+
+    line-height:1.4;
+
+    color:white;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.quote-section p{
+
+    margin-top:35px;
+
+    color:rgba(255,255,255,.85);
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    font-size:14px;
+
+}
+/*==================================================
+                THANK YOU SECTION
+===================================================*/
+
+.thank-you{
+
+    background:#EEF4EF;
+
+    text-align:center;
+
+    padding:120px 30px;
+
+}
+
+.closing-line{
+
+    color:#6F8A75;
+
+    text-transform:uppercase;
+
+    letter-spacing:4px;
+
+    font-size:14px;
+
+    margin-bottom:25px;
+
+    font-weight:600;
+
+}
+
+.thank-you h2{
+
+    font-size:68px;
+
+    margin-bottom:35px;
+
+    color:#2E3131;
+
+}
+
+.thank-you p{
+
+    max-width:760px;
+
+    margin:0 auto 22px;
+
+    color:#666B68;
+
+    line-height:2;
+
+    font-size:18px;
+
+}
+
+
+/*==================================================
+                    FOOTER
+===================================================*/
+
+.contact-footer{
+
+    background:#536A59;
+
+    color:white;
+
+    text-align:center;
+
+    padding:80px 20px;
+
+}
+
+.footer-line{
+
+    width:80px;
+
+    height:2px;
+
+    background:rgba(255,255,255,.35);
+
+    margin:0 auto 35px;
+
+}
+
+.footer-name{
+
+    font-size:20px;
+
+    margin-bottom:12px;
+
+}
+
+.contact-footer p{
+
+    color:rgba(255,255,255,.85);
+
+    margin:10px 0;
+
+    line-height:1.8;
+
+}
+
+.contact-footer strong{
+
+    color:white;
+
+}
+
+
+/*==================================================
+            MICRO ANIMATIONS
+===================================================*/
+
+.contact-card,
+.quote-section,
+.thank-you{
+
+    transition:.45s ease;
+
+}
+
+.contact-card:hover{
+
+    transform:translateY(-12px);
+
+}
+
+.contact-card a{
+
+    transition:.35s ease;
+
+}
+
+.contact-card:hover a{
+
+    padding:15px 36px;
+
+}
+
+.card-icon{
+
+    transition:.45s ease;
+
+}
+
+.contact-card:hover .card-icon{
+
+    transform:rotate(8deg) scale(1.08);
+
+}
+
+
+/*==================================================
+                MOBILE
+===================================================*/
+
+@media(max-width:992px){
+
+    .contact-grid{
+
+        grid-template-columns:1fr;
+
+        gap:30px;
+
+    }
+
+    .featured-card{
+
+        transform:none;
+
+    }
+
+    .featured-card:hover{
+
+        transform:translateY(-12px);
+
+    }
+
+    .contact-hero h1{
+
+        font-size:56px;
+
+    }
+
+    .quote-section h2{
+
+        font-size:40px;
+
+    }
+
+    .thank-you h2{
+
+        font-size:52px;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .contact-page::before,
+    .contact-page::after{
+
+        display:none;
+
+    }
+
+    .contact-grid{
+
+        padding:0 20px;
+
+    }
+
+    .contact-hero{
+
+        padding:80px 20px 50px;
+
+    }
+
+    .contact-hero h1{
+
+        font-size:44px;
+
+    }
+
+    .hero-description{
+
+        font-size:18px;
+
+    }
+
+    .quote-section{
+
+        padding:90px 25px;
+
+    }
+
+    .quote-section h2{
+
+        font-size:34px;
+
+    }
+
+    .quote-mark{
+
+        font-size:160px;
+
+        top:-40px;
+
+    }
+
+    .thank-you{
+
+        padding:90px 25px;
+
+    }
+
+    .thank-you h2{
+
+        font-size:42px;
+
+    }
+
+    .thank-you p{
+
+        font-size:17px;
+
+    }
+
+}
