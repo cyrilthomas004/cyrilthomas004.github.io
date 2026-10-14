@@ -225,7 +225,6 @@ function loadProject(project) {
             openLink.target = "_blank";
             openLink.rel = "noopener noreferrer";
             openLink.className = "project-video-link";
-            openLink.textContent = "Open video in Google Drive";
             caption.textContent = videoProject.title;
 
             figure.appendChild(loadButton);
