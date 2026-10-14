@@ -437,12 +437,10 @@ p{
 
 }
 
-.story-container h2{
-
-    font-size:52px;
-
-    margin-bottom:45px;
-
+.story-container h2 {
+    font-size: 52px;
+    margin-bottom: 45px;
+    text-align: center;
 }
 
 .story-container p{
