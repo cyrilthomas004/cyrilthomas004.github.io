@@ -13,25 +13,6 @@ const projects = {
 
         visualClass: "art-storyline",
 
-        overview:
-            "A scenario-based eLearning course designed using Articulate Storyline to improve learner engagement and decision making.",
-
-        challenge:
-            "Create an engaging learning experience that encouraged learners to actively participate rather than passively consume content.",
-
-        approach:
-            "Used branching scenarios, variables and learner feedback to create meaningful interactions aligned with learning objectives.",
-
-        reflection:
-            "Designing purposeful interactions reinforced my belief that effective learning is driven by clarity rather than complexity.",
-
-        tools: [
-            "Storyline",
-            "Variables",
-            "SCORM",
-            "Canva"
-        ],
-
         courseLinks: [
             {
                 label: "Interactive Storyline Course 1",
@@ -64,24 +45,6 @@ const projects = {
             }
         ],
 
-        overview:
-            "Animated learning videos designed using Vyond to simplify concepts through storytelling.",
-
-        challenge:
-            "Present complex concepts in an engaging and memorable way.",
-
-        approach:
-            "Used storytelling, animation and narration to improve learner attention.",
-
-        reflection:
-            "Animation is most effective when it supports learning rather than distracts from it.",
-
-        tools: [
-            "Vyond",
-            "Animation",
-            "Storytelling"
-        ],
-
         button: "Watch the Video →",
 
         link: "#"
@@ -99,24 +62,6 @@ const projects = {
                 src: "https://drive.google.com/file/d/1Y-0codYSj9YDXuKF12bVBCOJCAR-yM75/preview",
                 title: "Training Video"
             }
-        ],
-
-        overview:
-            "Professional training videos created for onboarding and learning.",
-
-        challenge:
-            "Communicate information clearly while keeping learners engaged.",
-
-        approach:
-            "Focused on pacing, visuals and concise narration.",
-
-        reflection:
-            "Good instructional videos are built on clarity, not complexity.",
-
-        tools: [
-            "Premiere Pro",
-            "Canva",
-            "Editing"
         ],
 
         button: "",
@@ -155,24 +100,6 @@ const projects = {
         ],
 
         document: "documents/design/storyboard.pdf",
-
-        overview:
-            "A collection of visual communication work spanning newspaper design, posters and storyboards.",
-
-        challenge:
-            "Make information clear, engaging and easy to navigate while giving each piece a distinct visual voice.",
-
-        approach:
-            "Combine editorial hierarchy, thoughtful composition and visual storytelling to shape each format around its audience.",
-
-        reflection:
-            "Strong design makes a message easier to understand before a single word is read.",
-
-        tools: [
-            "Newspaper Design",
-            "Poster Design",
-            "Storyboarding"
-        ],
 
         button: "",
 
@@ -219,25 +146,6 @@ const projects = {
             caption: "Selected videos featured on the SymphonyAI corporate website"
         },
 
-        overview:
-            "A collection of animated learning, training, product and marketing videos created to make services, processes and ideas clear and engaging. Selected work is featured on the SymphonyAI corporate website.",
-
-        challenge:
-            "Turn detailed product features, business processes and learning topics into concise stories that make sense to different audiences.",
-
-        approach:
-            "Combine audience-focused scripting, purposeful visuals, animation, narration and pacing to deliver each message in an accessible format.",
-
-        reflection:
-            "Clear video storytelling helps people understand a message quickly—and gives useful content a life beyond a single channel.",
-
-        tools: [
-            "Animated Learning",
-            "Product Videos",
-            "Training",
-            "Marketing"
-        ],
-
         button: "",
 
         link: ""
@@ -276,16 +184,6 @@ const lightboxCaption = document.getElementById("lightbox-caption");
 const lightboxClose = document.querySelector(".lightbox-close");
 
 const panelTitle = document.getElementById("panel-title");
-
-const panelOverview = document.getElementById("panel-overview");
-
-const panelChallenge = document.getElementById("panel-challenge");
-
-const panelApproach = document.getElementById("panel-approach");
-
-const panelReflection = document.getElementById("panel-reflection");
-
-const panelTools = document.getElementById("panel-tools");
 
 const panelLinks = document.getElementById("panel-links");
 /* ==========================================
@@ -386,11 +284,6 @@ function loadProject(project) {
     }
 
     panelTitle.textContent = project.title;
-    panelOverview.textContent = project.overview;
-    panelChallenge.textContent = project.challenge;
-    panelApproach.textContent = project.approach;
-    panelReflection.textContent = project.reflection;
-
     panelLinks.replaceChildren();
     panelLinks.hidden = !project.courseLinks;
     if (project.courseLinks) {
@@ -404,20 +297,6 @@ function loadProject(project) {
             panelLinks.appendChild(link);
         });
     }
-
-    // Remove old tool chips
-    panelTools.innerHTML = "";
-
-    // Create new tool chips
-    project.tools.forEach(tool => {
-
-        const chip = document.createElement("span");
-
-        chip.textContent = tool;
-
-        panelTools.appendChild(chip);
-
-    });
 
 }
 
