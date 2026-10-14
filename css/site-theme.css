@@ -591,6 +591,7 @@ button:focus-visible {
 .project-panel.has-panel-media .panel-content {
     position: relative;
     padding-top: 22px;
+    
 }
 
 .project-panel.has-panel-media .close-panel {
@@ -1273,6 +1274,70 @@ footer {
 @media (max-width: 768px) {
     html {
         scroll-padding-top: 145px;
+        }
+        .work-hero {
+    padding: 74px 22px 60px;
+}
+
+.work-hero h1 {
+    font-size: clamp(38px, 8vw, 54px);
+    line-height: 1.05;
+}
+
+.hero-description {
+    max-width: 36rem;
+    margin-inline: auto;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.projects-section {
+    padding: 64px 18px 80px;
+}
+
+.projects-section .project-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px !important;
+    margin-top: 36px;
+}
+
+.project-panel {
+    width: 100vw;
+    max-width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+}
+
+.project-panel.has-panel-media .panel-content {
+    padding: 56px 20px 28px;
+}
+
+.project-panel .panel-content h2 {
+    margin: 8px 0 16px;
+    font-size: clamp(32px, 8vw, 42px);
+    line-height: 1.05;
+}
+
+.project-panel .project-links {
+    gap: 10px;
+    margin: 14px 0 24px;
+}
+
+.project-panel #panel-visual {
+    height: clamp(180px, 54vw, 240px);
+    min-height: 180px;
+}
+
+.project-video-list iframe,
+.project-video-load {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 16 / 9;
+}
+
+.gallery-pdf-link {
+    min-height: 48px;
+    
     }
 
     .navbar {
@@ -1358,11 +1423,15 @@ footer {
     .project-card h3 {
         padding-right: 22px;
         padding-left: 22px;
+        font-size: clamp(26px, 6vw, 32px);
+        line-height: 1.1;
     }
 
     .project-card p {
         padding-right: 22px;
         padding-left: 22px;
+        font-size: 15px;
+        line-height: 1.7;
     }
 
     .project-card .skill-tags {
@@ -1407,6 +1476,19 @@ footer {
     .static-text,
     .text-wrapper {
         font-size: 25px;
+    }
+
+    .project-panel.has-panel-media .panel-content {
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+
+    .design-gallery {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .design-gallery img {
+        height: min(65vw, 300px);
     }
 }
 
