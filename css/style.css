@@ -572,17 +572,17 @@ p{
 
 }
 
-.timeline-content h3{
-
-    font-size:30px;
-
-    margin-bottom:15px;
-
+.timeline-content h3 {
+    font-size: 30px;
+    margin-bottom: 15px;
 }
 
-.timeline-content p{
+.timeline-content .mphil-heading {
+    margin-top: 40px;
+}
 
-    margin:0;
+.timeline-content p {
+    margin: 0;
 
     line-height:1.8;
 
