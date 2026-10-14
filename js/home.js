@@ -4,7 +4,9 @@ const words = [
     "Rise Courses.",
     "Interactive Simulations.",
     "Training Videos.",
-    "Product Walkthroughs."
+    "Product Walkthroughs.",
+    "Animated Videos."
+    
 ];
 
 const changingText = document.getElementById("changing-text");
