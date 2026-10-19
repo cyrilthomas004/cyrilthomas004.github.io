@@ -1040,6 +1040,10 @@ button:focus-visible {
     background: #000;
 }
 
+.project-video-fullscreen {
+    display: none;
+}
+
 .project-video-load {
     display: grid;
     width: 100%;
