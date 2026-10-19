@@ -118,12 +118,17 @@
     .project-video-list { gap: 24px; }
     .project-video-list figure { border-radius: 4px; }
     .project-video-list iframe, .project-video-load { width: 100%; height: auto; min-height: 0; aspect-ratio: 16 / 9; }
-    .project-video-player { position: relative; width: 100%; aspect-ratio: 16 / 9; min-height: 200px; background: #000; }
+    .project-video-player { position: relative; width: 100%; height: 280px; height: min(360px, 50svh); min-height: 240px; background: #000; }
     .project-video-player[data-orientation="portrait"] { aspect-ratio: 9 / 16; height: min(115vw, 65svh); width: 100%; }
     .project-video-list .project-video-player iframe { position: absolute; inset: 0; width: 100%; height: 100%; min-height: 0; aspect-ratio: auto; }
     .project-video-fullscreen { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; width: 100%; padding: 10px 12px; border: 0; border-top: 1px solid var(--border); background: #172019; color: var(--primary); font: inherit; font-size: 12px; cursor: pointer; }
     .project-video-player:fullscreen { width: 100%; height: 100%; max-height: none; min-height: 0; aspect-ratio: auto; }
     .project-video-player:fullscreen iframe { width: 100%; height: 100%; }
+    .project-panel.has-expanded-video { transform: none; visibility: visible; transition: none; overflow: hidden; }
+    .project-video-player.is-expanded { position: fixed; inset: 0; z-index: 4000; width: 100% !important; height: 100vh !important; height: 100dvh !important; min-height: 0; aspect-ratio: auto; padding-top: calc(56px + env(safe-area-inset-top)); }
+    .project-video-list .project-video-player.is-expanded iframe { top: calc(56px + env(safe-area-inset-top)); height: calc(100% - 56px - env(safe-area-inset-top)); }
+    .project-video-exit { position: absolute; top: env(safe-area-inset-top); left: 0; z-index: 1; display: block; width: 100%; min-height: 56px; padding: 12px 20px; border: 0; border-bottom: 1px solid var(--border); background: #172019; color: var(--primary); font: inherit; font-size: 13px; cursor: pointer; }
+    .project-video-exit[hidden] { display: none; }
     .project-video-list figcaption { color: var(--heading); font-size: 14px; line-height: 1.6; }
     .project-video-description { font-size: 14px; line-height: 1.8; }
     .project-links { display: grid; }
