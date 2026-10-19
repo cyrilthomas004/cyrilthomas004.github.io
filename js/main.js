@@ -374,19 +374,46 @@ function loadProject(project) {
                 player.appendChild(video);
                 loadButton.replaceWith(player);
 
-                if (document.fullscreenEnabled && player.requestFullscreen) {
-                    const fullscreenButton = document.createElement("button");
-                    fullscreenButton.type = "button";
-                    fullscreenButton.className = "project-video-fullscreen";
-                    fullscreenButton.textContent = "\u26f6 Full screen";
-                    fullscreenButton.setAttribute("aria-label", "View " + videoProject.title + " in full screen");
-                    fullscreenButton.addEventListener("click", () => {
-                        player.requestFullscreen().catch(() => {
-                            fullscreenButton.textContent = "Use player fullscreen";
-                        });
+                const fullscreenButton = document.createElement("button");
+                const exitButton = document.createElement("button");
+                const supportsFullscreen = Boolean(document.fullscreenEnabled && player.requestFullscreen);
+                fullscreenButton.type = "button";
+                fullscreenButton.className = "project-video-fullscreen";
+                fullscreenButton.textContent = supportsFullscreen ? "\u26f6 Full screen" : "\u26f6 Expand video";
+                fullscreenButton.setAttribute("aria-label", "Expand " + videoProject.title);
+                fullscreenButton.setAttribute("aria-expanded", "false");
+                exitButton.type = "button";
+                exitButton.className = "project-video-exit";
+                exitButton.textContent = "Close expanded video";
+                exitButton.hidden = true;
+
+                const expandInPage = () => {
+                    panel.querySelectorAll(".project-video-player.is-expanded").forEach(expandedPlayer => {
+                        expandedPlayer.querySelector(".project-video-exit").click();
                     });
-                    player.after(fullscreenButton);
-                }
+                    player.classList.add("is-expanded");
+                    panel.classList.add("has-expanded-video");
+                    fullscreenButton.setAttribute("aria-expanded", "true");
+                    exitButton.hidden = false;
+                    exitButton.focus();
+                };
+
+                fullscreenButton.addEventListener("click", () => {
+                    if (supportsFullscreen) {
+                        player.requestFullscreen().catch(expandInPage);
+                    } else {
+                        expandInPage();
+                    }
+                });
+                exitButton.addEventListener("click", () => {
+                    player.classList.remove("is-expanded");
+                    panel.classList.remove("has-expanded-video");
+                    fullscreenButton.setAttribute("aria-expanded", "false");
+                    exitButton.hidden = true;
+                    fullscreenButton.focus();
+                });
+                player.appendChild(exitButton);
+                player.after(fullscreenButton);
             }, { once: true });
             caption.textContent = videoProject.title;
 
@@ -552,6 +579,10 @@ openButtons.forEach(button => {
 
 function closePanel() {
 
+    if (panel) {
+        panel.querySelectorAll(".project-video-player.is-expanded .project-video-exit").forEach(button => button.click());
+    }
+
     if(panel){
 
         panel.classList.remove("active");
@@ -602,6 +633,12 @@ document.addEventListener("keydown", function (e) {
 
     if (e.key === "Escape") {
 
+        const expandedVideoClose = panel && panel.querySelector(".project-video-player.is-expanded .project-video-exit");
+        if (expandedVideoClose) {
+            expandedVideoClose.click();
+            return;
+        }
+
         closePanel();
 
     }
@@ -633,4 +670,4 @@ function revealSections(){
 
     });
 
-}
+}   
