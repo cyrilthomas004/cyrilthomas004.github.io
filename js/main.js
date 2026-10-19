@@ -204,6 +204,7 @@ const projects = {
             },
             {
                 src: "https://drive.google.com/file/d/1aNSk1ztpb886b2AO5V6kGWALYuNu9jLa/preview",
+                orientation: "portrait",
                 title: "Frontline Microlearning | Visual Process Demonstrations",
                 description: "Developed a microlearning video series for Amazon frontline associates, replacing text-heavy posters with short, visual demonstrations of correct practices and common mistakes. Visited fulfillment centers, collaborated with site managers to identify frequent errors, and filmed real-world demonstrations using a mobile device, enhanced with visual annotations and designed in a vertical, Reels-style format. Published videos under one minute through the learning app, with one daily release to encourage continuous learning. The initiative received the highest learner ratings and significant recognition."
             },
@@ -361,11 +362,31 @@ function loadProject(project) {
             loadButton.setAttribute("aria-label", "Play video: " + videoProject.title);
             loadButton.textContent = "▶";
             loadButton.addEventListener("click", () => {
+                const player = document.createElement("div");
+                player.className = "project-video-player";
+                player.dataset.orientation = videoProject.orientation || "landscape";
                 const video = document.createElement("iframe");
                 video.src = videoProject.src;
                 video.title = videoProject.title;
                 video.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
-                loadButton.replaceWith(video);
+                video.allowFullscreen = true;
+                video.setAttribute("webkitallowfullscreen", "");
+                player.appendChild(video);
+                loadButton.replaceWith(player);
+
+                if (document.fullscreenEnabled && player.requestFullscreen) {
+                    const fullscreenButton = document.createElement("button");
+                    fullscreenButton.type = "button";
+                    fullscreenButton.className = "project-video-fullscreen";
+                    fullscreenButton.textContent = "\u26f6 Full screen";
+                    fullscreenButton.setAttribute("aria-label", "View " + videoProject.title + " in full screen");
+                    fullscreenButton.addEventListener("click", () => {
+                        player.requestFullscreen().catch(() => {
+                            fullscreenButton.textContent = "Use player fullscreen";
+                        });
+                    });
+                    player.after(fullscreenButton);
+                }
             }, { once: true });
             caption.textContent = videoProject.title;
 
