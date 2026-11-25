@@ -176,3 +176,24 @@
     #changing-text { font-size: 27px; }
     .project-panel .panel-content h2 { font-size: 32px; }
 }
+/* Additional mobile adjustments for the updated work page */
+
+@media (max-width: 768px) {
+
+    /* Claude project title */
+    .project-card:has([data-project="claude"]) h3 {
+        font-size: 25px;
+        line-height: 1.25;
+        max-width: 100%;
+    }
+
+    /* Improve spacing for longer project descriptions */
+    .project-card .project-content {
+        padding-bottom: 20px;
+    }
+
+    /* Keep project artwork consistent */
+    .project-card .project-art {
+        overflow: hidden;
+    }
+}
