@@ -8,11 +8,8 @@ console.log("JavaScript Loaded");
 const projects = {
 
     storyline: {
-
         title: "Interactive Storyline Experience",
-
         visualClass: "art-storyline",
-
         details: {
             facts: [
                 { label: "Tools", value: "Articulate Storyline 360" },
@@ -28,7 +25,6 @@ const projects = {
             ],
             scaleReach: "Developed for 7,000 frontline associates across India, with multilingual adaptations to support learning across diverse linguistic backgrounds."
         },
-
         courseLinks: [
             {
                 label: "Interactive Storyline Course 1",
@@ -39,15 +35,11 @@ const projects = {
                 href: "https://360.articulate.com/review/content/e830632f-865b-407c-8edd-60827cf6c2e3/review"
             }
         ]
-
     },
 
     vyond: {
-
-        title: "Animated Learning",
-
+        title: "Animated Videos",
         visualClass: "art-vyond",
-
         details: {
             subtitle: "Corporate Communication",
             facts: [
@@ -62,9 +54,7 @@ const projects = {
                 "Used animation and visual storytelling to maintain engagement and improve information clarity"
             ]
         },
-
         videosHeading: "Watch the animated videos",
-
         videos: [
             {
                 src: "https://drive.google.com/file/d/1YjEWGgdA4wGtY4SnJoH67W3Pai4Fzns2/preview",
@@ -75,19 +65,41 @@ const projects = {
                 title: "EF Channels"
             }
         ],
-
         button: "Watch the Video →",
-
         link: "#"
+    },
 
+    claude: {
+        title: "Claude Training Video | AI-Assisted Learning",
+        visualClass: "art-promo",
+        details: {
+            subtitle: "AI-Assisted Learning | Training Video",
+            facts: [
+                { label: "Tools", value: "Claude, Snagit" },
+                { label: "Format", value: "Narrated training video with screen-based demonstrations" },
+                { label: "Development", value: "Independently developed end-to-end" }
+            ],
+            overview: "Designed and developed a training video introducing Claude and demonstrating how AI can be leveraged to support learning, productivity and content development workflows. The video was independently developed end-to-end, including content structuring, scripting, screen-based demonstrations, video editing and voice-over narration recorded in my own voice. The focus was on making the tool and its capabilities accessible through a practical, easy-to-follow learning experience.",
+            approach: [
+                "Content research and structuring",
+                "Scriptwriting and instructional design",
+                "Screen recording and demonstrations using Snagit",
+                "Voice-over recording and narration",
+                "Used Claude for video development"
+            ]
+        },
+        videosHeading: "Watch the Claude training video",
+        videos: [
+            {
+                src: "https://drive.google.com/file/d/1j5jQxjW7bcylotKyHZljJ6a0hLik_wvw/preview",
+                title: "Claude Training Video | AI-Assisted Learning"
+            }
+        ]
     },
 
     training: {
-
         title: "Training Videos",
-
         visualClass: "art-training",
-
         details: {
             subtitle: "Product Training Videos | Tool Demonstrations",
             facts: [
@@ -107,26 +119,19 @@ const projects = {
             scaleHeading: "Delivery & Scale",
             scaleReach: "Delivered 3-4 videos per week, each approximately 4-8 minutes long, as part of a planned 100-video series under tight deadlines. Streamlined the development process to balance production speed with instructional clarity, visual consistency, and effective demonstrations."
         },
-
         videos: [
             {
                 src: "https://drive.google.com/file/d/1Y-0codYSj9YDXuKF12bVBCOJCAR-yM75/preview",
                 title: "Training Video"
             }
         ],
-
         button: "",
-
         link: ""
-
     },
 
     design: {
-
         title: "Editorial & Visual Design",
-
         visualClass: "art-design",
-
         gallery: [
             {
                 src: "images/design/learning-design-01.jpg",
@@ -181,21 +186,14 @@ const projects = {
                 caption: "Prathama newspaper"
             }
         ],
-
         document: "documents/design/storyboard.pdf",
-
         button: "",
-
         link: ""
-
     },
 
     promo: {
-
         title: "Videos",
-
         visualClass: "art-promo",
-
         videos: [
             {
                 src: "https://drive.google.com/file/d/1KbbZFgJcuJSAodsRvY4aga3lKS7E_Vkr/preview",
@@ -204,7 +202,8 @@ const projects = {
             },
             {
                 src: "https://drive.google.com/file/d/1aNSk1ztpb886b2AO5V6kGWALYuNu9jLa/preview",
-                orientation: "portrait",
+
+                               orientation: "portrait",
                 title: "Frontline Microlearning | Visual Process Demonstrations",
                 description: "Developed a microlearning video series for Amazon frontline associates, replacing text-heavy posters with short, visual demonstrations of correct practices and common mistakes. Visited fulfillment centers, collaborated with site managers to identify frequent errors, and filmed real-world demonstrations using a mobile device, enhanced with visual annotations and designed in a vertical, Reels-style format. Published videos under one minute through the learning app, with one daily release to encourage continuous learning. The initiative received the highest learner ratings and significant recognition."
             },
@@ -229,17 +228,13 @@ const projects = {
                 description: "Developed a product marketing video showcasing SummitAI's employee onboarding and offboarding automation capabilities. Used concise messaging and engaging visuals to communicate how automated workflows can streamline employee transitions, reduce manual effort, and minimize delays for enterprise customers."
             }
         ],
-
         proofImage: {
             src: "images/videos/corporate-portal-marketing-videos.png",
             alt: "Screenshot showing selected marketing videos published on the corporate website",
             caption: "Selected videos featured on the SymphonyAI corporate website"
         },
-
         button: "",
-
         link: ""
-
     }
 
 };
@@ -250,33 +245,19 @@ const projects = {
 ========================================== */
 
 const panel = document.querySelector(".project-panel");
-
 const overlay = document.querySelector(".overlay");
-
 const openButtons = document.querySelectorAll(".open-panel");
-
 const closeButton = document.querySelector(".close-panel");
-
 const panelVisual = document.getElementById("panel-visual");
-
 const panelVideos = document.getElementById("panel-videos");
-
 const panelGallery = document.getElementById("panel-gallery");
-
 const panelDocument = document.getElementById("panel-document");
-
 const designLightbox = document.getElementById("design-lightbox");
-
 const lightboxImage = document.getElementById("lightbox-image");
-
 const lightboxCaption = document.getElementById("lightbox-caption");
-
 const lightboxClose = document.querySelector(".lightbox-close");
-
 const panelTitle = document.getElementById("panel-title");
-
 const panelDetails = document.getElementById("panel-details");
-
 const panelLinks = document.getElementById("panel-links");
 
 function appendProjectDetails(container, details) {
@@ -329,10 +310,12 @@ function appendProjectDetails(container, details) {
 
     appendDetailSection("Project Overview", details.overview);
     appendDetailSection("Instructional Design Approach", details.approach);
+
     if (details.scaleReach) {
         appendDetailSection(details.scaleHeading || "Scale & Reach", details.scaleReach);
     }
 }
+
 
 /* ==========================================
    LOAD PROJECT DATA
@@ -348,6 +331,7 @@ function loadProject(project) {
 
     panelVideos.replaceChildren();
     panelVideos.hidden = !project.videos;
+
     if (project.videos) {
         const heading = document.createElement("h3");
         heading.textContent = project.videosHeading || "Selected video work";
@@ -357,14 +341,17 @@ function loadProject(project) {
             const figure = document.createElement("figure");
             const loadButton = document.createElement("button");
             const caption = document.createElement("figcaption");
+
             loadButton.type = "button";
             loadButton.className = "project-video-load";
             loadButton.setAttribute("aria-label", "Play video: " + videoProject.title);
             loadButton.textContent = "▶";
+
             loadButton.addEventListener("click", () => {
                 const player = document.createElement("div");
                 player.className = "project-video-player";
                 player.dataset.orientation = videoProject.orientation || "landscape";
+
                 const video = document.createElement("iframe");
                 video.src = videoProject.src;
                 video.title = videoProject.title;
@@ -377,11 +364,13 @@ function loadProject(project) {
                 const fullscreenButton = document.createElement("button");
                 const exitButton = document.createElement("button");
                 const supportsFullscreen = Boolean(document.fullscreenEnabled && player.requestFullscreen);
+
                 fullscreenButton.type = "button";
                 fullscreenButton.className = "project-video-fullscreen";
                 fullscreenButton.textContent = supportsFullscreen ? "\u26f6 Full screen" : "\u26f6 Expand video";
                 fullscreenButton.setAttribute("aria-label", "Expand " + videoProject.title);
                 fullscreenButton.setAttribute("aria-expanded", "false");
+
                 exitButton.type = "button";
                 exitButton.className = "project-video-exit";
                 exitButton.textContent = "Close expanded video";
@@ -391,6 +380,7 @@ function loadProject(project) {
                     panel.querySelectorAll(".project-video-player.is-expanded").forEach(expandedPlayer => {
                         expandedPlayer.querySelector(".project-video-exit").click();
                     });
+
                     player.classList.add("is-expanded");
                     panel.classList.add("has-expanded-video");
                     fullscreenButton.setAttribute("aria-expanded", "true");
@@ -405,6 +395,7 @@ function loadProject(project) {
                         expandInPage();
                     }
                 });
+
                 exitButton.addEventListener("click", () => {
                     player.classList.remove("is-expanded");
                     panel.classList.remove("has-expanded-video");
@@ -412,38 +403,44 @@ function loadProject(project) {
                     exitButton.hidden = true;
                     fullscreenButton.focus();
                 });
+
                 player.appendChild(exitButton);
                 player.after(fullscreenButton);
             }, { once: true });
-            caption.textContent = videoProject.title;
 
+            caption.textContent = videoProject.title;
             figure.appendChild(loadButton);
             figure.appendChild(caption);
+
             if (videoProject.description) {
                 const description = document.createElement("p");
                 description.className = "project-video-description";
                 description.textContent = videoProject.description;
                 figure.appendChild(description);
             }
+
             panelVideos.appendChild(figure);
         });
     }
+
     if (project.proofImage) {
         const proof = document.createElement("figure");
         const image = document.createElement("img");
         const caption = document.createElement("figcaption");
+
         proof.className = "video-portal-proof";
         image.src = project.proofImage.src;
         image.alt = project.proofImage.alt;
         image.loading = "lazy";
         caption.textContent = project.proofImage.caption;
+
         proof.appendChild(image);
         proof.appendChild(caption);
         panelVideos.appendChild(proof);
     }
-
-    panelGallery.replaceChildren();
+       panelGallery.replaceChildren();
     panelGallery.hidden = !project.gallery;
+
     if (project.gallery) {
         const heading = document.createElement("h3");
         heading.textContent = "Selected design samples";
@@ -453,16 +450,19 @@ function loadProject(project) {
             const figure = document.createElement("figure");
             const button = document.createElement("button");
             const image = document.createElement("img");
+
             button.className = "gallery-image-button";
             button.type = "button";
             button.setAttribute("aria-label", "Expand " + sample.caption);
             button.dataset.galleryIndex = String(index);
+
             image.src = sample.src;
             image.alt = sample.alt;
             image.loading = "lazy";
 
             button.appendChild(image);
             figure.appendChild(button);
+
             const caption = document.createElement("figcaption");
             caption.textContent = sample.caption;
             figure.appendChild(caption);
@@ -480,6 +480,7 @@ function loadProject(project) {
     }
 
     panelDocument.hidden = !project.document;
+
     if (project.document) {
         panelDocument.href = project.document;
     } else {
@@ -490,12 +491,14 @@ function loadProject(project) {
 
     panelDetails.replaceChildren();
     panelDetails.hidden = !project.details;
+
     if (project.details) {
         appendProjectDetails(panelDetails, project.details);
     }
 
     panelLinks.replaceChildren();
     panelLinks.hidden = !project.courseLinks;
+
     if (project.courseLinks) {
         project.courseLinks.forEach(course => {
             const link = document.createElement("a");
@@ -513,11 +516,13 @@ function loadProject(project) {
 if (panelGallery && designLightbox && lightboxImage && lightboxCaption) {
     panelGallery.addEventListener("click", event => {
         const button = event.target.closest(".gallery-image-button");
+
         if (!button) {
             return;
         }
 
         const image = button.querySelector("img");
+
         if (!image) {
             return;
         }
@@ -525,6 +530,7 @@ if (panelGallery && designLightbox && lightboxImage && lightboxCaption) {
         lightboxImage.src = image.src;
         lightboxImage.alt = image.alt;
         lightboxCaption.textContent = button.parentElement.querySelector("figcaption").textContent;
+
         designLightbox.showModal();
     });
 
@@ -547,29 +553,21 @@ if (panelGallery && designLightbox && lightboxImage && lightboxCaption) {
 ========================================== */
 
 openButtons.forEach(button => {
-
     button.addEventListener("click", function (e) {
-
         e.preventDefault();
 
         const projectName = this.dataset.project;
-
         const selectedProject = projects[projectName];
 
         loadProject(selectedProject);
 
-        if(panel && overlay){
-
-    panel.classList.add("active");
-
-    overlay.classList.add("active");
-
-}
+        if (panel && overlay) {
+            panel.classList.add("active");
+            overlay.classList.add("active");
+        }
 
         document.body.style.overflow = "hidden";
-
     });
-
 });
 
 
@@ -583,20 +581,15 @@ function closePanel() {
         panel.querySelectorAll(".project-video-player.is-expanded .project-video-exit").forEach(button => button.click());
     }
 
-    if(panel){
-
+    if (panel) {
         panel.classList.remove("active");
-
     }
 
-    if(overlay){
-
+    if (overlay) {
         overlay.classList.remove("active");
-
     }
 
     document.body.style.overflow = "auto";
-
 }
 
 
@@ -605,23 +598,15 @@ function closePanel() {
 ========================================== */
 
 if (closeButton) {
-
     closeButton.addEventListener("click", function () {
-
         closePanel();
-
     });
-
 }
 
 if (overlay) {
-
     overlay.addEventListener("click", function () {
-
         closePanel();
-
     });
-
 }
 
 
@@ -632,18 +617,19 @@ if (overlay) {
 document.addEventListener("keydown", function (e) {
 
     if (e.key === "Escape") {
-
         const expandedVideoClose = panel && panel.querySelector(".project-video-player.is-expanded .project-video-exit");
+
         if (expandedVideoClose) {
             expandedVideoClose.click();
             return;
         }
 
         closePanel();
-
     }
 
 });
+
+
 /* ==========================================
    SCROLL REVEAL
 ========================================== */
@@ -654,20 +640,13 @@ window.addEventListener("scroll", revealSections);
 
 revealSections();
 
-function revealSections(){
-
-    reveals.forEach(section=>{
-
+function revealSections() {
+    reveals.forEach(section => {
         const top = section.getBoundingClientRect().top;
-
         const trigger = window.innerHeight - 120;
 
-        if(top < trigger){
-
+        if (top < trigger) {
             section.classList.add("active");
-
         }
-
     });
-
-}   
+}
